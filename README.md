@@ -21,7 +21,3 @@ connectors:
     webhook-url: http(s)://<host>:<port>  # Url for Spark to connect to your bot
     access-token: <your bot access token>  # Your access token
 ```
-
-## License
-
-GNU General Public License Version 3 (GPLv3)
