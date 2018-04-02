@@ -101,6 +101,6 @@ class ConnectorCiscoSpark(Connector):
         """Listen for and parse new messages."""
         pass  # Listening is handled by the aiohttp web server
 
-    async def respond(self, message):
+    async def respond(self, message, room=None):
         """Respond with a message."""
         self.api.messages.create(message.room["id"], text=message.text)
