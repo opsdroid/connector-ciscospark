@@ -15,21 +15,20 @@ _LOGGER = logging.getLogger(__name__)
 
 class ConnectorCiscoSpark(Connector):
 
-    def __init__(self, config):
+    def __init__(self, config, opsdroid=None):
         """Setup the connector."""
         _LOGGER.debug("Starting cisco spark connector")
+        super().__init__(config, opsdroid=opsdroid)
         self.name = "ciscospark"
         self.config = config
-        self.opsdroid = None
         self.default_room = None
         self.bot_name = config.get("bot-name", 'opsdroid')
         self.bot_spark_id = None
         self.secret = uuid.uuid4().hex
         self.people = {}
 
-    async def connect(self, opsdroid):
+    async def connect(self):
         """Connect to the chat service."""
-        self.opsdroid = opsdroid
         try:
             self.api = CiscoSparkAPI(access_token=self.config["access-token"])
         except KeyError:
@@ -97,7 +96,7 @@ class ConnectorCiscoSpark(Connector):
         """Get the bot id and set it in the class."""
         self.bot_spark_id = self.api.people.me().id
 
-    async def listen(self, opsdroid):
+    async def listen(self):
         """Listen for and parse new messages."""
         pass  # Listening is handled by the aiohttp web server
 
