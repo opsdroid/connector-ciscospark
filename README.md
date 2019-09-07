@@ -1,4 +1,4 @@
-⚠️ *DEPRECATED* ⚠️ This connector is now built in to [opsdroid core](https://opsdroid.readthedocs.io/en/stable/connectors/webexteams/) and renamed it to webexteams. This repository only exists for backward compatibility and will be removed.
+⚠️ *DEPRECATED* ⚠️ This connector is now built in to [opsdroid core](https://docs.opsdroid.dev/en/latest/connectors/webexteams/) and renamed it to webexteams. This repository only exists for backward compatibility and will be removed.
 
 # opsdroid connector cisco spark
 
